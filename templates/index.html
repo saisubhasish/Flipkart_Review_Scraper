@@ -1,0 +1,20 @@
+{% extends 'base.html' %}                                     <!-- extending basePage.html file as parent-->
+
+{% block head %}                                              <!-- extended from parent basePage.html -->
+
+<title>Search Page</title>                                    <!-- title tag displays the content of the tab-->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}                                              <!-- extended from parent basePage.html -->
+<div class="content">
+    <h1 style="text-align: center">Search</h1>
+
+    <div class="form">
+        <form action="/review" method="POST">                 <!-- action is an end point where all the data of the form given by user will get filled--> <!-- method is for api : via body -->
+            <input type="text" name="content" id="content">   <!-- name is the identity to the value for the backend -->
+            <input type="submit" value="Search">              <!-- type is of different type which defines the operation type -->  <!-- value is the button name-->
+        </form>
+    </div>
+</div>
+{% endblock %}

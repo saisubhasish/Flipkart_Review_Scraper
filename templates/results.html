@@ -1,0 +1,39 @@
+<!DOCTYPE html>      <!-- This is a description to   browser that this webpage contains all the elements of html 5 are present -->
+<html lang="en">     <!-- html tag Root (top level element) of html document -->
+
+<head>                               <!-- head tag contains the machine readable content metadate -->
+    <meta charset="UTF-8">           <!-- utf-8 is a variable-width character used for electronic communication -->
+    <title>Review Page</title>       <!-- title tag displays the content of the tab -->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">    <!-- rel defines the relationship between linked resources and current document-->
+
+            <link rel="stylesheet" href="./style.css">      <!-- Here we can add a style.css sheet to this html page -->               <!-- href is an attribute used to reference another document and found in link tag or anchor tag -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">      <!-- url_for() function builds url dynamically -->
+
+</head>
+
+<body>
+    <div class="table-users">
+        <div class="header">Reviews</div>  <!-- Name of the table in webpage -->
+
+        <table cellspacing="0">     <!-- cellspacing is used to specify the space between the cells -->
+            <tr><th>price</th>      <!-- <th> tag defines a header cell in an HTML table -->
+                <th>product</th>
+                <th>name</th>
+                <th>rating</th>
+                <th>comment heading</th>
+                <th width="230">comments</th>
+            </tr>                              <!--  <tr> HTML element defines a row of cells in a table -->
+                {% for review in reviews %}    <!--  include  processes a partial template. Any variable in the parent template will be available in the partial template -->
+            <tr>                               <!-- Using for loop we are rendering the values in reviews and displaying in the table -->
+                <td>{{review['price']}}</td>
+                <td>{{review['product']}}</td>
+                <td>{{review['name']}}</td>
+                <td>{{review['rating']}}</td>
+                <td>{{review['commentHead']}}</td>
+                <td>{{review['comment']}}</td>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

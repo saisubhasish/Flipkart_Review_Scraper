@@ -1,0 +1,13 @@
+<!DOCTYPE html>                   <!-- This is a description to   browser that this webpage contains all the elements of html 5 are present -->
+<html lang="en">                  <!-- html tag Root (top level element) of html document -->     <!-- lang="en" is a property and it definr=es that english language is used in this code -->
+<head>                            <!-- head tag contains the machine readable content metadate -->
+    <meta charset="UTF-8">        <!-- Boilerplate code (Basic structure of code) : The section of code that are repeated in multiple places with little no variations -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">         <!-- metadate : gives more information about the document -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>     <!-- Content to be displayed on the web page -->
+    {% block body %}{% endblock %}
+</body>
+</html>
